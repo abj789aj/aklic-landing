@@ -545,6 +545,16 @@ footer{
   text-transform:uppercase;
 }
 
+
+.mobile-panel{display:none}
+@media(max-width:760px){
+  .mobile-panel{position:absolute;top:66px;left:0;width:100%;padding:8px 17px 18px;background:rgba(6,7,8,.97);border-bottom:1px solid var(--line);backdrop-filter:blur(14px);z-index:39}
+  .mobile-panel.open{display:block}
+  .mobile-panel a{display:block;padding:15px 4px;border-bottom:1px solid var(--line-soft);color:#bfc0c1;font-size:10px;letter-spacing:2px;text-transform:uppercase}
+  .mobile-panel a:last-child{border-bottom:0}
+  .mobile-panel a:hover,.mobile-panel a:focus{color:#fff}
+  .menu{appearance:none;-webkit-appearance:none;border:0;background:transparent;padding:8px;margin:-8px;cursor:pointer;color:#ddd;font:inherit;font-size:21px;line-height:1;z-index:45}
+}
 /* Responsive */
 @media(max-width:1000px){
   .container{width:min(calc(100% - 50px),var(--max))}
@@ -635,9 +645,13 @@ footer{
     </nav>
 
     <div class="nav-tag">Anime × Story × Global</div>
-    <div class="menu">☰</div>
+    <button class="menu" id="menuButton" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
   </div>
 </header>
+<div class="mobile-panel" id="mobilePanel" aria-hidden="true">
+  <a href="#home">Home</a><a href="#brand">The Brand</a><a href="#projects">IP Projects</a><a href="#specs">Specifications</a><a href="#acquisition">Acquisition</a><a href="#contact">Contact</a>
+</div>
+
 
 <main>
   <section class="hero" id="home">
@@ -790,7 +804,7 @@ footer{
       </div>
 
       <div class="acq-action">
-        <a href="mailto:abdul789aj@gmail.com?subject=Aklic%20Acquisition%20Prospectus" class="btn">
+        <a href="mailto:contact@aklic.com?subject=Aklic%20Acquisition%20Prospectus" class="btn">
           Request Acquisition Prospectus <span>→</span>
         </a>
         <div class="eyebrow">Confidential / Serious Inquiries Only</div>
@@ -807,7 +821,7 @@ footer{
       <div class="footer-inquiry">
         <h3>Secure Executive Inquiries</h3>
         <p>For acquisition discussions, partnerships, or strategic opportunities.</p>
-        <a href="mailto:abdul789aj@gmail.com" class="btn">Contact Us <span>→</span></a>
+        <a href="mailto:contact@aklic.com" class="btn">Contact Us <span>→</span></a>
       </div>
 
       <div class="footer-legal">
@@ -822,5 +836,17 @@ footer{
     </div>
   </div>
 </footer>
+
+<script>
+(function(){
+ const button=document.getElementById('menuButton');
+ const panel=document.getElementById('mobilePanel');
+ if(!button||!panel)return;
+ function closeMenu(){panel.classList.remove('open');panel.setAttribute('aria-hidden','true');button.setAttribute('aria-expanded','false');button.setAttribute('aria-label','Open navigation');button.textContent='☰';}
+ button.addEventListener('click',function(){const open=panel.classList.toggle('open');panel.setAttribute('aria-hidden',String(!open));button.setAttribute('aria-expanded',String(open));button.setAttribute('aria-label',open?'Close navigation':'Open navigation');button.textContent=open?'×':'☰';});
+ panel.querySelectorAll('a').forEach(function(link){link.addEventListener('click',closeMenu);});
+ window.addEventListener('resize',function(){if(window.innerWidth>760)closeMenu();});
+})();
+</script>
 </body>
 </html>
