@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Aklic Studios — premium anime intellectual property and digital entertainment asset.">
+<meta name="theme-color" content="#070809">
+<title>AKLIC Studios — Strategic Asset Acquisition</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root{
+  --bg:#070809;
+  --bg-soft:#0b0d0f;
+  --white:#f2f0eb;
+  --text:#d6d4d0;
+  --muted:#8b8d90;
+  --line:rgba(255,255,255,.13);
+  --line-soft:rgba(255,255,255,.075);
+  --red:#c91f2b;
+  --max:1260px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:Inter,Arial,sans-serif;
+  font-weight:300;
+  line-height:1.5;
+  overflow-x:hidden;
+}
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:50;
+  pointer-events:none;
+  opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+a{color:inherit;text-decoration:none}
+.container{width:min(calc(100% - 96px),var(--max));margin:auto}
+.serif{font-family:"Cormorant Garamond",Georgia,serif}
+.eyebrow{
+  color:#bdbfc1;
+  font-size:10px;
+  line-height:1;
+  letter-spacing:5px;
+  text-transform:uppercase;
+}
+.red{color:var(--red)}
+
+header{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:40;
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+.nav{
+  height:76px;
+  display:flex;
+  align-items:center;
+}
+.logo{
+  width:170px;
+  flex:none;
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:28px;
+  line-height:.72;
+  font-weight:600;
+  letter-spacing:6px;
+  color:#eee;
+}
+.logo small{
+  display:block;
+  margin-top:9px;
+  font-family:Inter,Arial,sans-serif;
+  font-size:7px;
+  line-height:1;
+  letter-spacing:5px;
+  text-align:center;
+  font-weight:500;
+}
+nav{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:32px;
+  flex:1;
+}
+nav a{
+  position:relative;
+  padding:29px 0 27px;
+  color:#aeb0b1;
+  font-size:9px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  white-space:nowrap;
+  transition:color .25s ease;
+}
+nav a:after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:2px;
+  background:var(--red);
+  transform:scaleX(0);
+  transform-origin:center;
+  transition:transform .25s ease;
+}
+nav a:hover,nav a.active{color:#fff}
+nav a.active:after{transform:scaleX(1)}
+.nav-tag{
+  width:180px;
+  flex:none;
+  padding:11px 12px;
+  border:1px solid var(--line);
+  text-align:center;
+  color:#bfc0c0;
+  font-size:8px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+.menu{display:none}
+
+.hero{
+  position:relative;
+  height:min(720px,100vh);
+  min-height:570px;
+  overflow:hidden;
+  background:#050607;
+}
+.hero-bg{
+  position:absolute;
+  inset:0;
+  background-image:
+    linear-gradient(90deg,rgba(3,4,5,.96) 0%,rgba(3,4,5,.78) 27%,rgba(3,4,5,.27) 63%,rgba(3,4,5,.43) 100%),
+    linear-gradient(0deg,rgba(3,4,5,.84) 0%,transparent 32%,rgba(3,4,5,.1) 100%),
+    url("assets/hero.webp");
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+.hero-content{
+  position:relative;
+  z-index:2;
+  height:100%;
+  display:flex;
+  align-items:center;
+  padding-top:64px;
+}
+.hero-copy{width:66%;max-width:800px}
+.hero-copy .eyebrow{margin-bottom:20px}
+.hero h1{
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:clamp(92px,12vw,178px);
+  line-height:.72;
+  font-weight:500;
+  letter-spacing:2px;
+  color:#f4f2ee;
+}
+.studios{
+  margin:24px 0 24px 8px;
+  font-size:clamp(18px,2vw,30px);
+  line-height:1;
+  letter-spacing:13px;
+  color:#f1f0ed;
+}
+.hero-description{
+  max-width:720px;
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:clamp(21px,2vw,28px);
+  line-height:1.15;
+  color:#e8e6e1;
+}
+.hero-meta{
+  display:flex;
+  gap:18px;
+  margin-top:27px;
+  color:#b7b8b8;
+  font-size:8px;
+  letter-spacing:5px;
+  text-transform:uppercase;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:35px;
+  min-width:380px;
+  margin-top:30px;
+  padding:17px 25px;
+  border:1px solid rgba(255,255,255,.72);
+  color:#f1f0ed;
+  font-size:10px;
+  letter-spacing:1.6px;
+  text-transform:uppercase;
+  transition:background .25s,color .25s,border-color .25s;
+}
+.btn span{font-size:20px;line-height:0;transition:transform .25s}
+.btn:hover{background:#fff;color:#050505;border-color:#fff}
+.btn:hover span{transform:translateX(5px)}
+.hero-side{
+  position:absolute;
+  right:3.5%;
+  top:22%;
+  z-index:2;
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+.hero-side-line{
+  width:1px;
+  height:115px;
+  background:linear-gradient(#fff,rgba(255,255,255,0));
+}
+.hero-side-text{
+  color:#d3d2ce;
+  font-size:9px;
+  letter-spacing:5px;
+  line-height:2.7;
+  text-align:center;
+  text-transform:uppercase;
+}
+.hero-quote{
+  position:absolute;
+  right:3.5%;
+  bottom:13px;
+  z-index:2;
+  color:#b8b8b6;
+  font-size:7px;
+  letter-spacing:3px;
+  line-height:1.7;
+  text-align:right;
+  text-transform:uppercase;
+}
+
+/* Brand */
+.brand{
+  padding:62px 0 42px;
+  border-top:1px solid var(--line-soft);
+  background:var(--bg);
+}
+.brand-intro{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:90px;
+  align-items:end;
+}
+.brand h2{
+  margin-top:17px;
+  max-width:590px;
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:clamp(47px,4.3vw,68px);
+  line-height:.91;
+  font-weight:500;
+  color:var(--white);
+}
+.brand-copy{
+  max-width:610px;
+  padding-bottom:3px;
+  font-size:13px;
+  color:#aeb0b1;
+}
+.brand-copy p+p{margin-top:18px}
+.pillars{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  margin-top:43px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.pillar{
+  min-height:155px;
+  padding:25px 30px 20px;
+  border-right:1px solid var(--line);
+  text-align:center;
+}
+.pillar:last-child{border-right:0}
+.pillar .icon{
+  height:34px;
+  margin-bottom:14px;
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:29px;
+  line-height:1;
+  color:#eee;
+}
+.pillar h3{font-size:14px;font-weight:500;color:#e5e4e1}
+.pillar p{
+  max-width:245px;
+  margin:10px auto 0;
+  font-size:11px;
+  line-height:1.55;
+  color:#8f9193;
+}
+
+/* Projects */
+.projects{
+  padding:50px 0 48px;
+  border-top:1px solid var(--line-soft);
+}
+.project-grid{
+  display:grid;
+  grid-template-columns:1.08fr .92fr;
+  gap:55px;
+  align-items:center;
+  margin-top:27px;
+}
+.project-art{
+  position:relative;
+  aspect-ratio:1.92/1;
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:#08090a url("assets/project.webp") center/cover no-repeat;
+}
+.project-art:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(0deg,rgba(0,0,0,.76),transparent 62%);
+}
+.project-label{
+  position:absolute;
+  left:38px;
+  bottom:25px;
+  z-index:2;
+}
+.project-label .eyebrow{margin-bottom:9px}
+.project-label strong{
+  display:block;
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:57px;
+  line-height:.8;
+  font-weight:500;
+  letter-spacing:8px;
+  color:#f2f0eb;
+}
+.project-label small{
+  display:block;
+  margin-top:12px;
+  font-size:8px;
+  letter-spacing:4px;
+  color:#d4d3cf;
+  text-transform:uppercase;
+}
+.project-info h2{
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:42px;
+  line-height:.98;
+  font-weight:500;
+  color:#f0efeb;
+}
+.project-info h2 em{
+  color:#87888a;
+  font-style:normal;
+  font-size:.62em;
+}
+.project-info>p{
+  margin:18px 0 27px;
+  max-width:650px;
+  color:#aeb0b1;
+  font-size:13px;
+  line-height:1.55;
+}
+.spec-list{border-top:1px solid var(--line)}
+.spec-row{
+  display:grid;
+  grid-template-columns:105px 1fr;
+  min-height:38px;
+  align-items:center;
+  border-bottom:1px solid var(--line);
+  font-size:11px;
+}
+.spec-row span:first-child{
+  color:#727579;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+}
+.spec-row span:last-child{color:#d2d1ce}
+
+/* Technical */
+.specs{
+  padding:43px 0 50px;
+  border-top:1px solid var(--line-soft);
+}
+.spec-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:17px;
+  margin-top:31px;
+}
+.spec-card{
+  min-height:135px;
+  display:grid;
+  grid-template-columns:72px 1fr;
+  align-items:center;
+  border:1px solid var(--line);
+  padding:20px 27px;
+}
+.spec-card .big{
+  grid-row:1;
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:37px;
+  line-height:1;
+  color:#eee;
+}
+.spec-card h3{
+  font-size:13px;
+  line-height:1.25;
+  font-weight:500;
+  color:#e4e3df;
+}
+.spec-card p{
+  margin-top:7px;
+  font-size:11px;
+  line-height:1.45;
+  color:#8d9092;
+}
+.platforms{
+  grid-column:2;
+  margin-top:11px;
+  font-size:7px;
+  letter-spacing:3px;
+  white-space:nowrap;
+  color:#8b8d90;
+  text-transform:uppercase;
+}
+
+/* Acquisition + footer */
+.acquisition{
+  position:relative;
+  min-height:270px;
+  display:flex;
+  align-items:center;
+  border-top:1px solid var(--line-soft);
+  border-bottom:1px solid var(--line);
+  overflow:hidden;
+}
+.acquisition-bg{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,rgba(3,4,5,.94) 0%,rgba(3,4,5,.79) 42%,rgba(3,4,5,.55) 100%),
+    linear-gradient(0deg,rgba(3,4,5,.66),rgba(3,4,5,.3)),
+    url("assets/acquisition.webp") center/cover no-repeat;
+}
+.acq-grid{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:1.28fr .72fr;
+  gap:60px;
+  align-items:center;
+}
+.acq-copy h2{
+  margin:15px 0 17px;
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:clamp(46px,4.8vw,67px);
+  line-height:.86;
+  font-weight:500;
+  color:#f2f0eb;
+}
+.acq-copy p{
+  max-width:790px;
+  font-size:14px;
+  line-height:1.55;
+  color:#c0c1c1;
+}
+.acq-action{text-align:center}
+.acq-action .btn{width:100%;min-width:0;margin-top:0}
+.acq-action .eyebrow{
+  margin-top:18px;
+  font-size:7px;
+  letter-spacing:4px;
+}
+
+footer{
+  padding:38px 0 17px;
+  background:var(--bg);
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:190px 1fr 1fr;
+  align-items:start;
+}
+.footer-logo{
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:37px;
+  line-height:.72;
+  letter-spacing:5px;
+  color:#f0efeb;
+}
+.footer-logo small{
+  display:block;
+  margin-top:12px;
+  font-family:Inter,Arial,sans-serif;
+  font-size:8px;
+  letter-spacing:5px;
+}
+.footer-inquiry{
+  min-height:115px;
+  padding-left:35px;
+  border-left:1px solid var(--line);
+}
+.footer-inquiry h3{
+  font-size:13px;
+  font-weight:500;
+  color:#e7e6e2;
+}
+.footer-inquiry p{
+  margin-top:5px;
+  font-size:11px;
+  color:#818487;
+}
+.footer-inquiry .btn{
+  min-width:195px;
+  margin-top:17px;
+  padding:12px 23px;
+  font-size:9px;
+}
+.footer-legal{
+  min-height:115px;
+  padding-left:35px;
+  border-left:1px solid var(--line);
+  font-size:10px;
+  line-height:1.5;
+  color:#7d7f81;
+}
+.footer-bottom{
+  display:flex;
+  justify-content:space-between;
+  margin-top:17px;
+  padding-top:15px;
+  border-top:1px solid var(--line-soft);
+  color:#5e6062;
+  font-size:7px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+
+/* Responsive */
+@media(max-width:1000px){
+  .container{width:min(calc(100% - 50px),var(--max))}
+  .nav{height:70px}
+  .logo{width:145px;font-size:25px}
+  nav{gap:18px}
+  nav a{font-size:8px}
+  .nav-tag{width:155px;font-size:7px}
+  .hero-copy{width:70%}
+  .project-grid{gap:35px}
+  .project-info h2{font-size:35px}
+  .spec-card{grid-template-columns:55px 1fr;padding:18px}
+  .platforms{letter-spacing:2px}
+}
+@media(max-width:760px){
+  .container{width:calc(100% - 34px)}
+  header{background:rgba(5,6,7,.45);backdrop-filter:blur(8px)}
+  .nav{height:66px}
+  nav,.nav-tag{display:none}
+  .menu{display:block;margin-left:auto;font-size:19px;color:#ddd}
+  .hero{height:680px;min-height:0}
+  .hero-bg{
+    background-position:63% center;
+    background-image:
+      linear-gradient(90deg,rgba(3,4,5,.93) 0%,rgba(3,4,5,.63) 58%,rgba(3,4,5,.43) 100%),
+      linear-gradient(0deg,rgba(3,4,5,.88),transparent 45%),
+      url("assets/hero.webp");
+  }
+  .hero-content{padding-top:45px;align-items:center}
+  .hero-copy{width:100%;max-width:610px}
+  .hero h1{font-size:clamp(78px,22vw,125px)}
+  .studios{font-size:18px;letter-spacing:8px;margin:20px 0}
+  .hero-description{font-size:21px;max-width:580px}
+  .hero-meta{letter-spacing:3px;gap:11px;flex-wrap:wrap}
+  .btn{min-width:0;width:100%;margin-top:25px}
+  .hero-side{display:none}
+  .hero-quote{right:17px;bottom:12px}
+  .brand,.projects{padding:55px 0 42px}
+  .brand-intro,.project-grid,.acq-grid{grid-template-columns:1fr;gap:28px}
+  .brand h2{font-size:50px}
+  .brand-copy{font-size:12px}
+  .pillars{grid-template-columns:1fr 1fr;margin-top:35px}
+  .pillar{min-height:145px;padding:22px 15px}
+  .pillar:nth-child(2){border-right:0}
+  .pillar:nth-child(3),.pillar:nth-child(4){border-top:1px solid var(--line)}
+  .project-grid{margin-top:23px}
+  .project-art{aspect-ratio:1.75/1}
+  .project-info h2{font-size:38px}
+  .spec-grid{grid-template-columns:1fr;gap:12px}
+  .spec-card{min-height:125px}
+  .acquisition{min-height:390px;padding:50px 0}
+  .acq-action{text-align:left}
+  .acq-action .btn{width:100%}
+  footer{padding-top:30px}
+  .footer-grid{grid-template-columns:1fr;gap:25px}
+  .footer-inquiry,.footer-legal{padding-left:0;border-left:0;border-top:1px solid var(--line);padding-top:22px;min-height:0}
+}
+@media(max-width:460px){
+  .hero{height:650px}
+  .hero-description{font-size:19px}
+  .hero-meta{font-size:7px}
+  .pillars{grid-template-columns:1fr}
+  .pillar{border-right:0!important;border-top:1px solid var(--line)!important}
+  .pillar:first-child{border-top:0!important}
+  .project-art{aspect-ratio:1.5/1}
+  .project-label{left:23px;bottom:20px}
+  .project-label strong{font-size:44px}
+  .spec-card{grid-template-columns:60px 1fr}
+  .platforms{white-space:normal;line-height:1.7}
+  .acq-copy h2{font-size:49px}
+  .footer-bottom{flex-direction:column;gap:9px}
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="container nav">
+    <a href="#" class="logo">AKLIC<small>STUDIOS</small></a>
+
+    <nav>
+      <a href="#home" class="active">Home</a>
+      <a href="#brand">The Brand</a>
+      <a href="#projects">IP Projects</a>
+      <a href="#specs">Specifications</a>
+      <a href="#acquisition">Acquisition</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-tag">Anime × Story × Global</div>
+    <div class="menu">☰</div>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+
+    <div class="container hero-content">
+      <div class="hero-copy">
+        <div class="eyebrow">Stories That Stay</div>
+        <h1>AKLIC</h1>
+        <div class="studios">STUDIOS</div>
+
+        <p class="hero-description">
+          A Turn-Key Premium Anime Intellectual Property &amp; Digital Trademark Optimized for Global Streaming Networks.
+        </p>
+
+        <div class="hero-meta">
+          <span>Anime</span><span>/</span><span>Narrative</span><span>/</span><span>Global Audience</span>
+        </div>
+
+        <a href="#acquisition" class="btn">
+          Request Acquisition Prospectus <span>→</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-side">
+      <div class="hero-side-line"></div>
+      <div class="hero-side-text">Dark<br>Minds<br>Brighter<br>Stories</div>
+    </div>
+
+    <div class="hero-quote">Some truths<br>should never be found.</div>
+  </section>
+
+  <section class="brand" id="brand">
+    <div class="container">
+      <div class="brand-intro">
+        <div>
+          <div class="eyebrow">The Brand Value</div>
+          <h2>A High-Recall, Premium Digital Asset</h2>
+        </div>
+
+        <div class="brand-copy">
+          <p>Aklic is a short, distinctive, and globally adaptable brand — designed for modern entertainment architectures and streaming platforms.</p>
+          <p>It evokes mystery, intelligence, and emotional depth, creating a strong foundation for high-end anime, psychological thrillers, and genre-defining storytelling.</p>
+        </div>
+      </div>
+
+      <div class="pillars">
+        <article class="pillar">
+          <div class="icon">◇</div>
+          <h3>Short &amp; Memorable</h3>
+          <p>A unique, premium name with strong global recall.</p>
+        </article>
+
+        <article class="pillar">
+          <div class="icon">◎</div>
+          <h3>Global Appeal</h3>
+          <p>Easy to pronounce, brand, and expand across markets.</p>
+        </article>
+
+        <article class="pillar">
+          <div class="icon">▷</div>
+          <h3>Multi-Platform Ready</h3>
+          <p>Ideal for anime, films, series, games, and merchandise.</p>
+        </article>
+
+        <article class="pillar">
+          <div class="icon">▥</div>
+          <h3>Long-Term Asset</h3>
+          <p>A scalable identity for a global entertainment ecosystem.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects" id="projects">
+    <div class="container">
+      <div class="eyebrow">Current IP Projects / Showroom</div>
+
+      <div class="project-grid">
+        <div class="project-art">
+          <div class="project-label">
+            <div class="eyebrow">Project</div>
+            <strong>AKLIC</strong>
+            <small>Working Title</small>
+          </div>
+        </div>
+
+        <div class="project-info">
+          <h2>Project: AKLIC <em>(Working Title)</em></h2>
+          <p>
+            Multi-arc episodic narrative script blending psychological crime thriller with dark visual horror, fully completed and ready for production legal transfer.
+          </p>
+
+          <div class="spec-list">
+            <div class="spec-row"><span>Genre</span><span>Psychological Crime Thriller / Dark Visual Horror</span></div>
+            <div class="spec-row"><span>Format</span><span>Multi-Arc Episodic Series</span></div>
+            <div class="spec-row"><span>Status</span><span>Script Completed / Production Ready</span></div>
+            <div class="spec-row"><span>Transfer</span><span>Available for Legal Transfer</span></div>
+            <div class="spec-row"><span>Expansion</span><span>Potential for Films, Games &amp; Extended Universe</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="specs" id="specs">
+    <div class="container">
+      <div class="eyebrow">Technical Specifications</div>
+
+      <div class="spec-grid">
+        <article class="spec-card">
+          <div class="big">4K</div>
+          <div>
+            <h3>Native 4K UHD Layout</h3>
+            <p>Optimized for next-generation visual storytelling.</p>
+          </div>
+        </article>
+
+        <article class="spec-card">
+          <div class="big">◇</div>
+          <div>
+            <h3>Hybrid 2D/3D Anime Pipeline Design</h3>
+            <p>Flexible production pipeline for cinematic quality.</p>
+          </div>
+        </article>
+
+        <article class="spec-card">
+          <div class="big">▣</div>
+          <div>
+            <h3>Target Platforms</h3>
+            <p>SVOD — Global Streaming Network Specifications.</p>
+            <div class="platforms">Netflix / Prime Video / Disney+ / Max / Others</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="acquisition" id="acquisition">
+    <div class="acquisition-bg"></div>
+
+    <div class="container acq-grid">
+      <div class="acq-copy">
+        <div class="eyebrow red">Acquisition Opportunity</div>
+        <h2>Strategic Asset Acquisition.</h2>
+        <p>
+          The premium domain Aklic.com, along with its complete architectural brand framework and flagship narrative package, is available for outright corporate buyout or joint-venture.
+        </p>
+      </div>
+
+      <div class="acq-action">
+        <a href="mailto:contact@aklic.com?subject=Aklic%20Acquisition%20Prospectus" class="btn">
+          Request Acquisition Prospectus <span>→</span>
+        </a>
+        <div class="eyebrow">Confidential / Serious Inquiries Only</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-logo">AKLIC<small>STUDIOS</small></div>
+
+      <div class="footer-inquiry">
+        <h3>Secure Executive Inquiries</h3>
+        <p>For acquisition discussions, partnerships, or strategic opportunities.</p>
+        <a href="mailto:contact@aklic.com" class="btn">Contact Us <span>→</span></a>
+      </div>
+
+      <div class="footer-legal">
+        <p>© 2026 Aklic Studios.</p>
+        <p>All Intellectual Property and Script Assets Registered.</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>Stories / People / Worlds / Forever</span>
+      <span>Aklic.com</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
