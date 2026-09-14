@@ -54,11 +54,14 @@ a{color:inherit;text-decoration:none}
 .red{color:var(--red)}
 
 header{
-  position:absolute;
+  position:fixed;
   top:0;
   left:0;
   width:100%;
   z-index:40;
+  background:rgba(5,6,7,.78);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
   border-bottom:1px solid rgba(255,255,255,.12);
 }
 .nav{
@@ -548,7 +551,7 @@ footer{
 
 .mobile-panel{display:none}
 @media(max-width:760px){
-  .mobile-panel{position:absolute;top:66px;left:0;width:100%;padding:8px 17px 18px;background:rgba(6,7,8,.97);border-bottom:1px solid var(--line);backdrop-filter:blur(14px);z-index:39}
+  .mobile-panel{position:fixed;top:66px;left:0;width:100%;padding:8px 17px 18px;background:rgba(6,7,8,.97);border-bottom:1px solid var(--line);backdrop-filter:blur(14px);z-index:39}
   .mobile-panel.open{display:block}
   .mobile-panel a{display:block;padding:15px 4px;border-bottom:1px solid var(--line-soft);color:#bfc0c1;font-size:10px;letter-spacing:2px;text-transform:uppercase}
   .mobile-panel a:last-child{border-bottom:0}
